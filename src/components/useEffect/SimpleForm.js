@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './effects.css';
+import { Message } from './Message';
 export const SimpleForm = () => {
   //useEffect : Es un hook que sirve para ejecutar un efecto secundario cuando algo suceda
   //con nuestros componentes
@@ -56,6 +57,8 @@ export const SimpleForm = () => {
           onChange={handleInputChange}
         />
       </div>
+
+      {name === '123' && <Message />}
     </>
   );
 };
