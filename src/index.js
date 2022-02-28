@@ -10,7 +10,9 @@ import { FocusScreen } from './components/useRef/FocusScreen';
 import { RealExampleRef } from './components/useRef/RealExampleRef';
 import { CounterApp } from './components/useState/CounterApp';
 import { CounterWithCustomHook } from './components/useState/CounterWithCustomHook';
+import { CallbackHook } from './components/memos/CallbackHook';
 
 import { HookApp } from './HookApp';
+import { Padre } from './components/07-tarea-memo/Padre';
 
-ReactDOM.render(<MemoHook />, document.getElementById('root'));
+ReactDOM.render(<Padre />, document.getElementById('root'));
