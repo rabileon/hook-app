@@ -14,5 +14,8 @@ import { CallbackHook } from './components/memos/CallbackHook';
 
 import { HookApp } from './HookApp';
 import { Padre } from './components/07-tarea-memo/Padre';
+import { TodoApp } from './components/useReducer/TodoApp';
 
-ReactDOM.render(<Padre />, document.getElementById('root'));
+ReactDOM.render(<TodoApp />, document.getElementById('root'));
+
+// import './components/useReducer/intro-reducer';
