@@ -15,22 +15,24 @@ export const useFetch = (url) => {
   }, []);
 
   useEffect(() => {
-    if (isMounted.current) {
-      setState({ data: null, loading: true, error: null });
-    } else {
-      console.log('setState no se llamo');
-    }
-
+    setState({ data: null, loading: true, error: null });
     fetch(url)
       .then((resp) => resp.json())
       .then((data) => {
-        setTimeout(() => {
+        if (isMounted.current) {
           setState({
             loading: false,
             error: null,
             data,
           });
-        }, 4000);
+        }
+      })
+      .catch(() => {
+        setState({
+          data: null,
+          loading: false,
+          error: 'No se pudo cargar la info',
+        });
       });
   }, [url]);
   return state;
