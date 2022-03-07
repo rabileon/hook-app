@@ -12,7 +12,7 @@ export const LoginScreen = () => {
       <hr />
       <button
         className="btn btn-primary"
-        onClick={() => setUser({ id: 123, name: 'Fernando' })}
+        onClick={() => setUser({ id: 123, name: 'Rabi' })}
       >
         Login
       </button>
