@@ -6,13 +6,6 @@ import { todoReducer } from './todoReducer';
 
 const init = () => {
   return JSON.parse(localStorage.getItem('todos')) || [];
-  // return [
-  //   {
-  //     id: new Date().getTime(),
-  //     desc: 'Aprender React',
-  //     done: false,
-  //   },
-  // ];
 };
 
 export const TodoApp = () => {
@@ -23,15 +16,11 @@ export const TodoApp = () => {
   }, [todos]);
 
   const handleDelete = (todoId) => {
-    console.log(todoId);
-
-    //crear la action
-
     const action = {
       type: 'delete',
       payload: todoId,
     };
-    //dispatch
+
     dispatch(action);
   };
 
@@ -51,7 +40,7 @@ export const TodoApp = () => {
 
   return (
     <div>
-      <h1>TodoApp ({todos.lenght})</h1>
+      <h1>TodoApp ( {todos.length} ) </h1>
       <hr />
 
       <div className="row">
@@ -60,10 +49,11 @@ export const TodoApp = () => {
             todos={todos}
             handleDelete={handleDelete}
             handleToggle={handleToggle}
-          ></TodoList>
+          />
         </div>
+
         <div className="col-5">
-          <TodoAdd handleAddTodo={handleAddTodo}></TodoAdd>
+          <TodoAdd handleAddTodo={handleAddTodo} />
         </div>
       </div>
     </div>
